@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var request = require("request");
+var apikey = require("../keys").newsapi;
 
 var articlesOptions = function (query, region, category, page) {
     return {
@@ -13,7 +14,7 @@ var articlesOptions = function (query, region, category, page) {
                 pageSize: '10',
                 category: category,
                 page: page,
-                apiKey: '' //TODO add news api key
+                apiKey: apikey
             },
         headers:
             {
